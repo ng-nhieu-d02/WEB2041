@@ -1,0 +1,1119 @@
+@import url('https://fonts.googleapis.com/css2?family=Bonheur+Royale&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fleur+De+Leah&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
+
+:root{
+    --green:rgb(0,255,0);
+    --black:#130f40;
+    --light-color:#666;
+    --box-shadow:0 .5rem 1.5rem rgba(0,0,0,.1);
+    --border:.2rem solid rgba(0,0,0,.1);
+    --outline:.1rem solid rgba(0,0,0,.1);
+    --outline-hover:.2rem solid var(--black);
+}
+*{
+    font-family: 'Bonheur Royale', cursive;
+    margin: 0; padding: 0;
+    box-sizing: border-box;
+    outline: none; border:none;
+    text-decoration: none;
+    text-transform: capitalize;
+    transition: all .2s linear;
+}
+html{
+    font-size: 62.5%;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    scroll-padding-top: 7rem;
+}
+
+.header{
+    position: fixed;
+    top:0; left:0; right: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding:1.9rem 10%;
+    background:#fff;
+    box-shadow: var(--box-shadow);
+}
+.header a{
+    text-decoration: none;
+}
+.header .logo{
+    font-size: 2.5rem;
+    color:var(--black);
+    font-family: 'Bebas Neue', cursive;
+}
+.header .logo i{
+    color:var(--green);
+}
+.header .navbar a{
+    font-size: 1.7rem;
+    margin:0 2rem;
+    color:var(--black);
+    text-decoration: none;
+    font-family: 'Bebas Neue', cursive;
+}
+.header .navbar a:hover{
+    color:var(--green);
+}
+.header .icons{
+    display: flex;
+}
+.header .icons div{
+    height: 5rem;
+    width: 5rem;
+    line-height: 5rem;
+    background: #eee;
+    color:var(--black);
+    font-size: 2rem;
+    margin-left: 1.5rem;
+    cursor: pointer;
+    text-align: center;
+    font-family: 'Bebas Neue', cursive;
+    position: relative;
+    border-radius: 50%;
+}
+.header .icons div img{
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    border-radius: 100%;
+}
+.header .icons .bi-cart nav{
+    width: 16px;
+    height: 16px;
+    background-color: red;
+    position: absolute;
+    top: -10%; left: 60%;
+    border-radius: 50%;
+}
+
+.header .icons .bi-cart p{
+    font-family: 'Bebas Neue', cursive;
+    position: absolute;
+    top: -93%; left: 34%;
+    color: white;
+    font-size: 1.3rem;
+}
+.header .icons .bi-file-earmark-person nav,.header .icons .users nav{
+    width: 16px;
+    height: 16px;
+    background-color: red;
+    position: absolute;
+    top: -10%; left: 60%;
+    border-radius: 50%;
+}
+.header .icons .bi-file-earmark-person p,.header .icons .users p{
+    font-family: 'Bebas Neue', cursive;
+    position: absolute;
+    top: -93%; left: 45%;
+    color: white;
+    font-size: 1.3rem;
+}
+
+.header .icons div:hover{
+    background: var(--green);
+    color:#fff;
+}
+.header .icons div img:hover{
+    border: solid 1px var(--green);
+    color:#fff;
+}
+
+#menu-btn{
+    display: none;
+}
+.header .search-form{
+    position: absolute;
+    top:110%; right:-110%;
+    width: 50rem;
+    height:5rem;
+    background: #fff;
+    border-radius: .5rem;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    box-shadow: var(--box-shadow);
+}
+
+.header .order-success{
+    position: fixed;
+    top: 100%; right: 3%;
+    width: 32rem;
+    height:5rem;
+    background: rgb(8, 228, 125);
+    border-radius: .5rem;
+    overflow: hidden;
+    box-shadow: var(--box-shadow);
+    line-height: 5rem;
+    display: flex;
+}
+.header .order-fail{
+    position: fixed;
+    top: 100%; right: 3%;
+    width: 32rem;
+    height:5rem;
+    background: rgb(233, 21, 56);
+    border-radius: .5rem;
+    overflow: hidden;
+    box-shadow: var(--box-shadow);
+    line-height: 5rem;
+    display: flex;
+}
+@keyframes order-success {
+    0% {opacity:0%;background-color: white;}
+    50% {opacity:100%;background-color: rgb(8, 228, 125);}
+    100% {opacity:0%;background-color: white;}
+}
+@keyframes oder-fail {
+    0% {opacity:0%;background-color: white;}
+    50% {opacity:100%;background-color: rgb(233, 21, 56);}
+    100% {opacity:0%;background-color: white;}
+}
+.header .newUser-success{
+    position: fixed;
+    opacity: 0;
+    top: 85%; right: 3%;
+    width: 32rem;
+    height:5rem;
+    border-radius: .5rem;
+    overflow: hidden;
+    box-shadow: var(--box-shadow);
+    line-height: 5rem;
+    display: flex;
+    animation-name: order-success;
+    animation-duration: 8s;
+    transition-timing-function: cubic-bezier(1, 6, 1);
+}
+.header .newUser-fail{
+    position: fixed;
+    opacity: 0;
+    top: 85%; right: 3%;
+    width: 32rem;
+    height:5rem;
+    border-radius: .5rem;
+    overflow: hidden;
+    box-shadow: var(--box-shadow);
+    line-height: 5rem;
+    display: flex;
+    animation-name: oder-fail;
+    animation-duration: 8s;
+    transition-timing-function: cubic-bezier(1, 6, 1);
+}
+.header .order-fail p,.header .order-success p,.header .newUser-success p,.header .newUser-fail p{
+    font-family: 'Oswald', sans-serif;
+    padding-left: 10%;
+    font-size: 1.5rem;
+}
+.header .order-fail i,.header .order-success i,.header .newUser-success i, .header .newUser-fail i{
+    padding-left: 5%;
+    padding-top: 3px;
+    font-size: 1.5rem;
+}
+.header .order-fail.active,.header .order-success.active{
+    top: 85%; right: 3%;
+    transition: all 0.2s linear;
+}
+
+.header .search-form.active{
+    right:17.5rem;
+    transition: .4s linear;
+}
+.header .search-form input{
+    height:100%;
+    width:100%;
+    font-family: 'Oswald', sans-serif;
+    background: none;
+    text-transform: none;
+    font-size: 1.6rem;
+    color:var(--black);
+    padding:0 1.5rem;
+}
+.header .search-form label{
+    font-size: 2.2rem;
+    padding-right: 1.5rem;
+    color:var(--black);
+    cursor: pointer;
+}
+.header .search-form label:hover{
+    color:var(--green);
+}
+.header .shopping-cart{
+    position: absolute;
+    top:110%; right:-110%;
+    padding:1rem;
+    border-radius: .5rem;
+    box-shadow: var(--box-shadow);
+    width:35rem;
+    background: #fff;
+    max-height: 900%;
+}
+.header .shopping-cart.active{
+    right:17.5rem;
+    transition: .4s linear;
+}
+.header .shopping-cart .cart-shopping{
+    width: 100%;
+    max-height: 500px;
+    overflow: auto;
+}
+.header .shopping-cart .cart-shopping .no-prd-in-cart{
+    font-family: 'Oswald', sans-serif;
+    border: dotted 1px rgb(99, 98, 98);
+    width: 100%;
+    height: 105px;
+    text-align: center;
+    line-height: 100px;
+    cursor: pointer;
+}
+.header .shopping-cart .cart-shopping .no-prd-in-cart p{
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.5rem;
+}
+
+
+.header .shopping-cart .cart-shopping .box{
+    display: flex;
+    align-items: center;
+    gap:1rem;
+    position: relative;
+    margin:2rem 0;
+    padding-bottom: 5px;
+    border-bottom: 1px solid black;
+    overflow: inherit;
+}
+
+.header .shopping-cart .cart-shopping .box img{
+    height: 9rem;
+    width: 9rem;
+    object-fit: cover;
+    padding-bottom: 1px;
+}
+
+.header .shopping-cart .cart-shopping .box .fa-trash{
+    font-size: 2rem;
+    position: absolute;
+    top:8%; right:2rem;
+    cursor: pointer;
+    color:var(--light-color);
+    transform: translateY(-50%);
+}
+
+.header .shopping-cart .cart-shopping .box .fa-trash:hover{
+    color:var(--green);
+}
+
+.header .shopping-cart .cart-shopping .box .content h3{
+    color:var(--black);
+    font-size: 1.7rem;
+    padding-bottom: 1rem;
+    padding-left: 2rem;
+    font-family: 'Oswald', sans-serif;
+}
+
+.header .shopping-cart .cart-shopping .box .content span{
+    color:var(--light-color);
+    font-size: 1.3rem;
+    padding-left: 2rem;
+    font-family: 'Oswald', sans-serif;
+}
+.header .shopping-cart .cart-shopping .box .content p{
+    color:var(--light-color);
+    font-size: 1.3rem;
+    padding-left: 2rem;
+    font-family: 'Oswald', sans-serif;
+}
+.header .shopping-cart .btn{
+    display: block;
+    text-align: center;
+    font-size: 1.5rem;
+    margin:1rem;
+    font-family: 'Bebas Neue', cursive;
+    border: solid 1px black;
+}
+.header .shopping-cart .btn-buynow{
+    height: 50px;
+    line-height: 40px;
+    font-size: 2.5rem;
+    color: chartreuse;
+    background-color: white;
+    box-shadow:var(--outline-hover) ;
+}
+.header .shopping-cart .btn-buynow:hover{
+    height: 50px;
+    line-height: 40px;
+    font-weight: 600;
+    font-size: 2.5rem;
+    color: white;
+    background-color: chartreuse;
+}
+.header .shopping-cart .box .content .tru, 
+.header .shopping-cart .box .content .cong{
+    cursor: pointer;
+    font-size: 2rem;
+    font-weight: 700;
+}
+.header .shopping-cart .box .content .tru button, 
+.header .shopping-cart .box .content .cong button{
+    cursor: pointer;
+    font-size: 2rem;
+    width: 25px;
+    background-color: white;
+    height: auto;
+    font-weight: 700;
+}
+.header .shopping-cart .box .content .tru button:hover,
+.header .shopping-cart .box .content .cong button:hover{
+    color: green;
+} 
+
+.header .shopping-cart .box .content .quantity{
+    padding-left: 1.7rem;
+}
+
+.header .shopping-cart .total{
+    font-size: 2rem;
+    padding:2rem 0;
+    display: flex;
+    text-align: center;
+    color:var(--black);
+    font-weight: 700;
+}
+.header .shopping-cart .total p{
+    text-align: center;
+    width: 50%;
+    font-family: 'Oswald', sans-serif;
+}
+.header .shopping-cart .total .total-price-in-the-cart{
+    text-align: left;
+    font-family: 'Oswald', sans-serif;
+}
+
+.header .login-form,.header .signin-form{
+    position: absolute;
+    top:110%; right:-110%;
+    width:35rem;
+    box-shadow: var(--box-shadow);
+    padding:2rem;
+    border-radius: .5rem;
+    background: #fff;
+    text-align: center;
+}
+.header .login-form p a{
+    cursor: pointer;
+}
+
+.header .login-form.active,.header .signin-form.active{
+    right:17.5rem;
+    transition: .4s linear;
+}
+
+.header .login-form h3,.header .signin-form h3{
+    font-size: 2.8rem;
+    text-transform: uppercase;
+    font-family: 'Bebas Neue', cursive;
+    color: var(--black);
+}
+
+.header .login-form .box,.header .signin-form .box{
+    width: 100%;
+    margin:.7rem 0;
+    background:#eee;
+    border-radius: .5rem;
+    padding:1rem;
+    font-size: 1.6rem;
+    color:var(--black);
+    text-transform: none;
+    font-family: 'Oswald', sans-serif;
+    /* font-family: 'Bebas Neue', cursive; */
+}
+
+.header .login-form p{
+    font-size: 1.4rem;
+    padding:0.5 0;
+    color:var(--light-color);
+    font-family: 'Bebas Neue', cursive;
+}
+
+.header .login-form p a{
+    text-decoration: none;
+    color:var(--green);
+    font-family: 'Bebas Neue', cursive;
+}
+.header .login-form p a:hover{
+    text-decoration: none;
+    color:var(--black);
+    font-family: 'Bebas Neue', cursive;
+}
+.login-form .btn, .signin-form .btn{
+    margin-top: 1rem;
+    text-align: center;
+    font-size: 1.5rem;
+    font-family: 'Bebas Neue', cursive;
+    border: solid 1px black;
+}
+.home{
+    width: 100%;
+    align-items: center;
+    background: url(../images/banner.png) no-repeat;
+    background-position: center;
+    background-size: cover;
+    padding-top: 20rem;
+    padding-bottom: 23rem;
+    justify-content: center;
+    box-shadow:rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
+    position: relative;
+}
+.home img{
+    width: 100%;
+}
+.home .meat{
+    width: auto;
+    height: 15rem;
+    position: absolute;
+    border: solid 2px white;
+    box-shadow:rgba(0, 0, 0, 0.85) 0px 25px 20px -20px;
+    top: 80%;
+    left: 15%;
+    transform: rotate(0deg);
+}
+.home .egg{
+    width: 20rem;
+    position: absolute;
+    height: auto;
+    border: solid 2px white;
+    box-shadow: rgba(0, 0, 0, 0.85) 0px 25px 20px -20px;
+    top: 80%;
+    left: 25%;
+    transform: rotate(0deg);
+}
+.home .canned-food{
+    width: 20rem;
+    position: absolute;
+    height: auto;
+    border: solid 2px white;
+    box-shadow: rgba(0, 0, 0, 0.85) 0px 25px 20px -20px;
+    top: 65%;
+    left: 20%;
+    transform: rotate(0deg);
+}
+.Certification{
+    padding-top: 130px; 
+    background-color: rgb(235, 235, 235);
+    padding: 40px 10%;
+    padding-bottom: 0;
+}
+.Certification .header-cer{
+    width: 100%;
+    border-bottom: solid 3px rgb(65, 63, 63);
+}
+.Certification .title-cer{
+    margin-left: 60%;
+    width: 25%;
+    background-color: chartreuse;
+    margin-bottom: 3px;
+    text-align: center;
+    border-radius: 10px;
+}
+.Certification .title-cer h1{
+    font-size: 4.5rem;
+    font-weight: 600;
+    line-height: 70px;
+}
+.Certification .box-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    gap:1.5rem;
+    padding-top: 40px;
+}
+
+.Certification .box-container .box{
+    padding:3rem 2rem;
+    background-color: white;
+    outline: var(--outline);
+    outline-offset: -1rem;
+    text-align: center;
+    box-shadow: var(--box-shadow);
+}
+
+.Certification .box-container .box:hover{
+    outline: var(--outline-hover);
+    outline-offset: 0rem;
+}
+
+.Certification .box-container .box img{
+    margin:1rem 0;
+    height: 15rem;
+}
+
+.Certification .box-container .box h3{
+    font-size: 2.8rem;
+    line-height: 1.8;
+    color:var(--black);
+    font-family: 'Oswald', sans-serif;
+}
+
+.Certification .box-container .box p{
+    font-size: 1.8rem;
+    line-height: 1.8;
+    color:var(--light-color);
+    padding:1rem 0;
+    font-family: 'Oswald', sans-serif;
+}
+.Certification .box-container .box a{
+    font-size: 2rem;
+    line-height: 1.7;
+    font-weight: 550;
+    color:var(--light-color);
+    padding: 0 2rem;
+    margin-bottom: 10px;
+    border: solid 2px black;
+    border-radius: 10px;
+    font-family: 'Oswald', sans-serif;
+}
+.product{   
+    background-color: rgb(235, 235, 235);
+    padding: 40px 10%;
+    padding-bottom: 0;
+}
+.product .header-prd{
+    width: 100%;
+    border-bottom: solid 3px rgb(65, 63, 63);
+}
+.product .title-prd{
+    margin-left: 15%;
+    width: 25%;
+    background-color: chartreuse;
+    margin-bottom: 3px;
+    text-align: center;
+    border-radius: 10px;
+}
+.product .header-prd h1{
+    font-size: 4.5rem;
+    font-weight: 600;
+    line-height: 70px;
+}
+.product .box-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    gap:1.5rem;
+    padding-top: 40px;
+}
+
+.product .box-container .box{
+    padding:3rem 2rem;
+    background-color: white;
+    outline: var(--outline);
+    outline-offset: -1rem;
+    text-align: center;
+    box-shadow: var(--box-shadow);
+}
+
+.product .box-container .box:hover{
+    outline: var(--outline-hover);
+    outline-offset: 0rem;
+}
+
+.product .box-container .box img{
+    margin:1rem 0;
+    height: 15rem;
+    max-width: 270px;
+    object-fit: cover;
+}
+
+.product .box-container .box h3{
+    font-size: 2.8rem;
+    line-height: 1.8;
+    color:var(--black);
+    font-family: 'Oswald', sans-serif;
+}
+
+.product .box-container .box p{
+    font-size: 1.8rem;
+    line-height: 1.8;
+    color:var(--light-color);
+    padding:1rem 0;
+    font-family: 'Oswald', sans-serif;
+}
+.product .box-container .box a{
+    font-size: 2rem;
+    line-height: 1.7;
+    font-weight: 600;
+    color:var(--light-color);
+    padding: 0 2rem;
+    margin-bottom: 10px;
+    border: solid 2px black;
+    border-radius: 10px;
+    font-family: 'Oswald', sans-serif;
+}
+.product .box-container .box a:hover{
+    background-color:chartreuse;
+}
+.product .show-all-prd{
+    text-decoration: none;
+    font-family: 'Bebas Neue', cursive;
+    width: 100%;
+    height: 4.5rem;
+    text-align: center;
+    margin-top: 50px;
+}
+.product .show-all-prd a{
+    text-decoration: none;
+    font-size: 2rem;
+    line-height: 4.5rem;
+    font-weight: 600;
+    color:var(--light-color);
+    padding: 0 5rem;
+    margin-bottom: 10px;
+    border: solid 2px black;
+    border-radius: 10px;
+    font-family: 'Oswald', sans-serif;
+}
+.product .show-all-prd a:hover{
+    color:var(--black);
+}
+
+.review{   
+    background-color: rgb(235, 235, 235);
+    padding: 40px 10%;
+    padding-bottom: 0;
+}
+.header-review{
+    background-color: rgb(235, 235, 235);
+    width: 100%;
+    border-bottom: solid 3px rgb(65, 63, 63);
+}
+.title-review{
+    margin-left: 60%;
+    width: 25%;
+    background-color: chartreuse;
+    margin-bottom: 3px;
+    text-align: center;
+    border-radius: 10px;
+}
+.header-review h1{
+    font-size: 4rem;
+    font-weight: 600;
+    line-height: 70px;
+}
+
+.review .review-slider{
+    padding: 1rem 1rem;
+    padding-top: 40px;
+}
+
+.review .review-slider .box{
+    background: #fff;
+    border-radius: .5rem;
+    text-align: center;
+    padding:3rem 2rem;
+    outline-offset: -1rem;
+    outline: var(--outline);
+    box-shadow: var(--box-shadow);
+    transition: .2s linear;
+}
+
+.review .review-slider .box:hover{
+    outline:var(--outline-hover);
+    outline-offset: 0rem;
+}
+
+.review .review-slider .box img{
+    height:10rem;
+    width:10rem;
+    border-radius: 50%;
+}
+
+.review .review-slider .box p{
+    padding:1rem 0;
+    line-height: 1.8;
+    color:var(--light-color);
+    font-size: 1.5rem;
+    font-family: 'Oswald', sans-serif;
+}
+
+.review .review-slider .box h3{
+    padding-bottom: .5rem;
+    color:var(--black);
+    font-size: 2.2rem;
+    font-family: 'Oswald', sans-serif;
+}
+
+.review .review-slider .box .stars i{
+    color:var(--green);
+    font-size: 1.7rem;
+}
+
+.blogs{   
+    background-color: rgb(235, 235, 235);
+    padding:40px 10%;
+}
+.blogs .header-blogs{
+    width: 100%;
+    border-bottom: solid 3px rgb(65, 63, 63);
+    background-color: rgb(235, 235, 235);
+    margin-bottom: 40px;
+}
+.blogs .title-blogs{
+    margin-left: 15%;
+    width: 25%;
+    background-color: chartreuse;
+    margin-bottom: 3px;
+    text-align: center;
+    border-radius: 10px;
+}
+.blogs .header-blogs h1{
+    font-size: 4.5rem;
+    font-weight: 600;
+    line-height: 70px;
+}
+
+.blogs .box-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    gap:1.5rem;
+}
+
+.blogs .box-container .box{
+    overflow: hidden;
+    border-radius: .5rem;
+    box-shadow: var(--box-shadow);
+    background:#fff;
+}
+
+.blogs .box-container .box img{
+    height:25rem;
+    width:100%;
+    object-fit: cover;
+}
+
+.blogs .box-container .box .content{
+    padding:2rem;
+}
+
+.blogs .box-container .box .content .icons{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 1.5rem;
+    margin-bottom: 1rem;
+    border-bottom: var(--border);
+}
+
+.blogs .box-container .box .content .icons a{
+    color:var(--light-color);
+    font-size: 1.5rem;
+    font-family: 'Oswald', sans-serif;
+}
+
+.blogs .box-container .box .content .icons a:hover{
+    color:var(--black);
+}
+
+.blogs .box-container .box .content .icons a i{
+    color:var(--orange);
+    padding-right: .5rem;
+}
+
+.blogs .box-container .box .content h3{
+    line-height: 1.8;
+    color:var(--black);
+    font-size: 2.2rem;
+    padding:.5rem 0;
+    font-family: 'Oswald', sans-serif;
+}
+
+.blogs .box-container .box .content p{
+    line-height: 1.8;
+    color:var(--light-color);
+    font-size: 1.5rem;
+    font-family: 'Oswald', sans-serif;
+    padding:.5rem 0;
+}
+.blogs .box-container .box .content a{
+    font-size: 2rem;
+    line-height: 1.7;
+    font-weight: 600;
+    color:var(--light-color);
+    padding: 0 2rem;
+    margin-bottom: 10px;
+    border: solid 2px black;
+    border-radius: 10px;
+    font-family: 'Oswald', sans-serif;
+}
+
+.footer{
+    background: #fff;
+    padding: 40px 10%;
+}
+
+.footer .box-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+    gap:1.5rem;
+}
+
+.footer .box-container .box h3{
+    font-size: 2.5rem;
+    color:var(--black);
+    padding:1rem 0;
+    font-family: 'Oswald', sans-serif;
+}
+
+.footer .box-container .box h3 i{
+    color:var(--green);
+    font-family: 'Oswald', sans-serif;
+}
+
+.footer .box-container .box .links{
+    display: block;
+    font-size: 1.5rem;
+    color:var(--light-color);
+    padding:1rem 0;
+    font-family: 'Oswald', sans-serif;
+}
+
+.footer .box-container .box .links i{
+    color:var(--green);
+    padding-right: .5rem;
+    font-family: 'Oswald', sans-serif;
+}
+
+.footer .box-container .box .links:hover i{
+    padding-right: 2rem;
+}
+
+
+.footer .box-container .box p{
+    line-height: 1.8;
+    font-size: 1.5rem;
+    color:var(--light-color);
+    padding:1rem 0;
+    font-family: 'Oswald', sans-serif;
+}
+
+.footer .box-container .box .share a{
+    padding: 10px 15px;
+    padding-top: 14px;
+    border-radius: .5rem;
+    font-size: 2rem;
+    color:var(--black);
+    margin-right: .5rem;
+    background: #eee;
+}
+
+.footer .box-container .box .share a:hover{
+    background: var(--green);
+    color: #fff;
+}
+
+.footer .box-container .box .email{
+    width: 100%;
+    margin:.7rem 0;
+    padding:1rem;
+    border-radius: .5rem;
+    background: #eee;
+    font-size: 1.6rem;
+    color:var(--black);
+    text-transform: none;
+    font-family: 'Oswald', sans-serif;
+}
+
+.footer .box-container .box .payment-img{
+    margin-top: 2rem;
+    height: 3rem;
+    display: block;
+}
+.btn_subscribe{
+    font-family: 'Oswald', sans-serif;
+    padding: 7px 30px;
+    font-size: 1.3rem;
+    border-radius: 10px;
+}
+.btn_subscribe:hover{
+    color: #fff;
+    border: solid 2px var(--black);
+}
+
+
+
+
+
+
+
+/* media queries  */
+
+@media (max-width:991px){
+
+    html{
+        font-size: 55%;
+    }
+    .header{
+        padding:2rem;
+    }
+    .header .login-form.active{
+        right:2rem;
+        transition: .4s linear;
+    }
+    .header .search-form.active{
+        right:2rem;
+        transition: .4s linear;
+    }
+    .header .shopping-cart.active{
+        right:2rem;
+        transition: .4s linear;
+    }
+   
+    .review .title-review{
+        margin-left: 45%;
+        width: 40%;
+        background-color: chartreuse;
+        margin-bottom: 3px;
+        text-align: center;
+        border-radius: 10px;
+    }
+
+
+}
+
+@media (max-width:768px){
+
+    #menu-btn{
+        display: inline-block;
+    }
+
+    .header .search-form{
+        width:90%;
+    }
+
+    .header .navbar{
+        position: absolute;
+        top:110%; right:-110%;
+        width:30rem;
+        box-shadow: var(--box-shadow);
+        border-radius: .5rem;
+        background: #fff;
+    }
+
+    .header .navbar.active{
+        right:2rem;
+        transition: .4s linear;
+    }
+    .header .navbar a{
+        font-size: 2rem;
+        margin:2rem 2.5rem;
+        display: block;
+    }
+    .header .login-form.active{
+        right:2rem;
+        transition: .4s linear;
+    }
+    .header .search-form.active{
+        right:2rem;
+        transition: .4s linear;
+    }
+    .header .shopping-cart.active{
+        right:2rem;
+        transition: .4s linear;
+    }
+   
+
+}
+@media (max-width:678px){
+    .Certification .title-cer{
+        margin-left: 60%;
+        width: 40%;
+        background-color: chartreuse;
+        margin-bottom: 3px;
+        text-align: center;
+        border-radius: 10px;
+    }
+}
+@media (max-width:598px){
+    .Certification{
+        padding-top: 13rem; 
+    }
+    .review .title-review{
+        margin-left: 40%;
+        width: 50%;
+        background-color: chartreuse;
+        margin-bottom: 3px;
+        text-align: center;
+        border-radius: 10px;
+    }
+}
+
+@media (max-width:450px){
+
+    html{
+        font-size: 50%;
+    }
+
+
+    .heading{
+        font-size: 2.5rem;
+    }
+
+    .footer{
+        text-align: center;
+    }
+
+    .footer .box-container .box .payment-img{
+        margin: 2rem auto;
+    }
+    .header .login-form.active{
+        right:2rem;
+        transition: .4s linear;
+    }
+    .header .search-form.active{
+        right:2rem;
+        transition: .4s linear;
+    }
+    .header .shopping-cart.active{
+        right:2rem;
+        transition: .4s linear;
+    }
+    .header .logo{
+        font-size: 2rem;
+        color:var(--black);
+        font-family: 'Bebas Neue', cursive;
+    }
+    .product .title-prd{
+        margin-left: 10%;
+        width: 80%;
+        background-color: chartreuse;
+        margin-bottom: 3px;
+        text-align: center;
+        border-radius: 10px;
+    }
+    .Certification .title-cer{
+        margin-left: 10%;
+        width: 80%;
+        background-color: chartreuse;
+        margin-bottom: 3px;
+        text-align: center;
+        border-radius: 10px;
+    }
+    .review .title-review{
+        margin-left: 10%;
+        width: 80%;
+        background-color: chartreuse;
+        margin-bottom: 3px;
+        text-align: center;
+        border-radius: 10px;
+    }
+    .blogs .title-blogs{
+        margin-left: 10%;
+        width: 80%;
+        background-color: chartreuse;
+        margin-bottom: 3px;
+        text-align: center;
+        border-radius: 10px;
+    }
+
+}
+

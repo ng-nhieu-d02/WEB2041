@@ -1,0 +1,440 @@
+@import url('https://fonts.googleapis.com/css2?family=Bonheur+Royale&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fleur+De+Leah&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
+
+
+:root{
+    --green:rgb(0,255,0);
+    --black:#130f40;
+    --light-color:#666;
+    --box-shadow:0 .5rem 1.5rem rgba(0,0,0,.1);
+    --border:.2rem solid rgba(0,0,0,.1);
+    --outline:.1rem solid rgba(0,0,0,.1);
+    --outline-hover:.2rem solid var(--black);
+}
+
+*{
+    padding: auto;
+    margin: auto;
+}
+html, body{
+    width: 100%;
+    height: 100%;
+}
+.container{
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 15% 85%;
+}
+.container .menu{
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    background-color: rgb(255, 255, 255);
+    position: relative;
+}
+.container .menu nav{
+    width: 100%;
+    height: 60px;
+    text-align: center;
+}
+.container .menu .logo img{
+    margin-top: 30px;
+    width: 80%;
+    margin-bottom: 50px;
+    border-radius: 20px;
+}
+.container .menu nav div{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    font-size: 120%;
+}
+.container .menu nav div a{
+    text-align: left;
+    width: 100%;
+    height: 60px;
+    line-height: 60px;
+    margin-top: auto;
+    margin-left: auto;
+    padding-left: 2rem;
+    text-decoration: none;
+    font-family: 'Oswald', sans-serif;
+    color: var(--black);
+}
+.container .menu nav div a:hover{
+    background-color: rgb(211, 212, 209);
+}
+
+.container .logoutAdmin{
+    position: absolute;
+    bottom: 20px;
+    width: 100%;
+    display: grid;
+    color: var(--black);
+    grid-template-columns: 40% 60%;
+}
+.container .logoutAdmin img{
+    width: 50px;
+    height: 50px;
+    border-radius: 20%;
+    object-fit: cover;
+    margin-left: 45px;
+    border: solid 3px red;
+    text-align: right;
+}
+.container .logoutAdmin div{
+    width: 100%;
+    height: 50px;
+    line-height: 50px;
+    text-align: left;
+    font-weight: 550;
+    font-family: 'Oswald', sans-serif;
+}
+.container .main{
+    width: 100%;
+    height: 100%;
+    background-color:rgb(211, 212, 209);
+}
+.container .main .startMain{
+    width: 100%;
+    height: 10%;
+    background-color: aliceblue
+}
+.container .main .BodyMain{
+    width: 100%;
+    height: 80%;
+}
+.container .main .endMain{
+    width: 100%;
+    height: 10%;
+    background-color: aliceblue
+}
+
+/* home */
+.container .main .BodyMain .box-content{
+    width: 90%;
+    height: 40%;
+    padding-top: 30px;
+    text-align: center;
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
+}
+.container .main .BodyMain .box-content .info-web{
+    width: 90%;
+    height: 100px;
+    background-color: rgb(78, 248, 129);
+    text-align: center;
+    display: grid;
+    grid-template-columns: 70% 30%;
+}
+.container .main .BodyMain .box-content .info-web div{
+    width: 100%;
+    height: 100%;
+    text-align: left;
+}
+.container .main .BodyMain .box-content .info-web div p{
+    width: 100%;
+    font-size: .9rem;
+    height: 30%;
+    padding-top: 10px;
+    text-align: left;
+    padding-left: 20px;
+    margin-top: 0;
+    font-family: 'Oswald', sans-serif;
+}
+.container .main .BodyMain .box-content .info-web div h2{
+    font-weight: 600;
+    font-size: 1.8rem;
+    height: 80%;
+    padding-left: 40px;
+    font-family: 'Oswald', sans-serif;  
+}
+.container .main .BodyMain .box-content .info-web i{
+    font-size: 1.8rem;
+}
+.container .main .BodyMain .box-member{
+    width: 90%;
+    height: 48%;
+    text-align: center;
+    padding-top: 20px;
+}
+.container .main .BodyMain .box-member h2{
+    font-family: 'Oswald', sans-serif; 
+    text-align: left;
+    padding-left: 50px;
+    margin-bottom: 20px;
+}
+.container .main .BodyMain .box-member .title-member{
+    width: 97.5%;
+    height: 40px;
+    line-height: 40px;
+    margin-top: 10px;
+    display: grid;
+    background-color: azure;
+    grid-template-columns: 20% 30% 30% 20%;
+    box-shadow: var(--box-shadow);
+    font-family: 'Oswald', sans-serif;
+    color: var(--black);
+}
+
+/* order */
+.container .main .BodyMain .danhSach{
+    padding-left: 10%;
+    padding-top: 5%;
+    font-family: 'Oswald', sans-serif;
+}
+.container .main .BodyMain .box-oder{
+    width: 90%;
+    height: 70%;
+    padding-top: 3%;
+    overflow: inherit;
+}
+.container .main .BodyMain .box-oder .box-content-order{
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    box-shadow: var(--box-shadow);
+    display: grid;
+    border-radius: 15px;
+    border: solid 2px rgb(185, 184, 184);
+    grid-template-columns: 10% 10% 20% 20% 40%;
+}
+.container .main .BodyMain .box-oder .box-content-order .action{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    font-size: .9rem;
+}
+.container .main .BodyMain .box-oder .box-content-order input{
+    width: 100%;
+    text-align: center;
+    background-color:rgb(211, 212, 209);
+    border: none;
+    font-family: 'Oswald', sans-serif;
+    font-size: .9rem;
+}
+.container .main .BodyMain .box-oder .box-content-order p{
+    width: 100%;
+    text-align: center;
+    font-family: 'Oswald', sans-serif;
+    font-size: .9rem;
+}
+.container .main .BodyMain .box-oder .box-content-order .Status{
+    width: 70%;
+    font-size: .9rem;
+}
+.container .main .BodyMain .box-oder .box-content-order .Status select{
+    width: 100%;
+    margin-top: 5px;
+    height: 30px;
+    border: none;
+    font-family: 'Oswald', sans-serif;
+    text-align: center;
+    border-radius: 15px;
+    font-size: .9rem;
+    cursor: pointer;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.08);
+    -webkit-appearance: none; 
+   -moz-appearance: none;
+   appearance: none; 
+}
+.container .main .BodyMain .box-oder .box-content-order .Status select option{
+    background-color: white;
+    border: none;
+    height: 20px;
+    border-radius: 15px;
+    cursor: pointer;
+}
+.container .main .BodyMain .box-oder .box-content-order .action div{
+    width: 100%;
+    text-align: center;
+    font-family: 'Oswald', sans-serif;
+    font-size: .9rem;
+}
+.container .main .BodyMain .box-oder .box-content-order .action div input{
+    width: 70%;
+    text-align: center;
+    height: 30px;
+    border-radius: 15px;
+    background-color: rgb(41, 211, 241);
+    font-size: .9rem;
+    cursor: pointer;
+}
+.container .main .BodyMain .box-oder .box-content-order .action div .InputHuy{
+    background-color: rgb(37, 238, 194);
+}
+
+/* product */
+.BodyMain .containerProd{
+    width: 90%;
+    display: grid;
+    grid-template-columns: 30% 70%;
+}
+.containerDm{
+    padding-top: 30px;
+    width: 100%;
+    height: 100%;
+}
+.containerDm .thEmDM{
+    width: 100%;
+    height: 30px;
+    line-height: 30px;
+    margin-top: 50px;
+    display: grid;
+    grid-template-columns: 70% 30%;
+}
+.containerDm .thEmDM input{
+    width: 100%;
+    background-color:rgb(211, 212, 209);
+    font-family: 'Oswald', sans-serif;
+    border: none;
+}
+.containerDm .contentDm{
+    width: 100%;
+    max-height: 530px;
+    overflow: inherit;
+    padding-top: 50px;
+}
+.containerDm .contentDm form{
+    display: grid;
+    grid-template-columns: 10% 40% 50%;
+    height: 50px;
+    line-height: 50px;
+    box-shadow: var(--box-shadow);
+    border-radius: 15px;
+    border: solid 2px rgb(185, 184, 184);
+    margin-bottom: 10px;
+}
+.containerDm .contentDm form input{
+    width: 100%;
+    background-color:rgb(211, 212, 209);
+    border: none;
+    text-align: center;
+    font-family: 'Oswald', sans-serif;
+}
+.containerDm .contentDm form .action{
+    width: 100%;
+    display: grid;
+    text-align: center;
+    grid-template-columns: 50% 50%;
+}
+.containerDm .contentDm form .action input{
+    width: 100%;
+    background-color:rgb(211, 212, 209);
+    border: none;
+    font-family: 'Oswald', sans-serif;
+}
+.containerPrd{
+    padding-left: 10%;
+    height: 100%;
+    padding-top: 30px;
+    width: 90%;
+}
+.containerPrd .thEmSp{
+    width: 100%;
+    height: 30px;
+    line-height: 30px;
+    margin-top: 50px;
+    display: grid;
+    grid-template-columns: 70% 30%;
+}
+.containerPrd .thEmSp input{
+    width: 100%;
+    background-color:rgb(211, 212, 209);
+    border: none;
+    font-family: 'Oswald', sans-serif;
+}
+.containerPrd .contentSp{
+    width: 100%;
+    max-height: 530px;
+    overflow: inherit;
+    padding-top: 50px;
+}
+.containerPrd .contentSp form{
+    display: grid;
+    grid-template-columns: 5% 5% 15% 10% 15% 30% 20% ;
+    height: 50px;
+    line-height: 50px;
+    box-shadow: var(--box-shadow);
+    border-radius: 15px;
+    border: solid 2px rgb(185, 184, 184);
+    margin-bottom: 10px;
+}
+.containerPrd .contentSp form input{
+    width: 100%;
+    background-color:rgb(211, 212, 209);
+    border: none;
+    text-align: center;
+    font-family: 'Oswald', sans-serif;
+}
+.containerPrd .contentSp form #imagesAdm{
+    width: 45%;
+    height: 40px;
+    object-fit: cover;
+}
+.containerPrd .contentSp form .action{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+
+/* binhluan */
+.review{   
+    padding: 100px 10%;
+    padding-bottom: 0;
+}
+.review h2{
+    margin-bottom: 59px;
+    font-family: 'Oswald', sans-serif;
+}
+
+.review .review-slider{
+    padding: 1rem 1rem;
+    padding-top: 40px;
+}
+
+.review .review-slider .box{
+    background: #fff;
+    border-radius: .5rem;
+    text-align: center;
+    padding:3rem 0rem;
+    outline-offset: -1rem;
+    outline: var(--outline);
+    box-shadow: var(--box-shadow);
+    transition: .2s linear;
+}
+
+.review .review-slider .box:hover{
+    outline:var(--outline-hover);
+    outline-offset: 0rem;
+}
+
+.review .review-slider .box img{
+    height:10rem;
+    width:10rem;
+    border-radius: 50%;
+}
+
+.review .review-slider .box p{
+    padding:1rem 0;
+    line-height: 1.8;
+    color:var(--light-color);
+    font-size: 1.5rem;
+    font-family: 'Oswald', sans-serif;
+}
+
+.review .review-slider .box h3{
+    padding-bottom: .5rem;
+    color:var(--black);
+    font-size: 2.2rem;
+    font-family: 'Oswald', sans-serif;
+}
+
+.review .review-slider .box .stars i{
+    color:var(--green);
+    font-size: 1.7rem;
+}
