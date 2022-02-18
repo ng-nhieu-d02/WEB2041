@@ -639,7 +639,7 @@ html{
     padding:1rem 0;
     font-family: 'Oswald', sans-serif;
 }
-.product .box-container .box a{
+.product .box-container .box .btn-add-to-card{
     font-size: 2rem;
     line-height: 1.7;
     font-weight: 600;
@@ -650,7 +650,7 @@ html{
     border-radius: 10px;
     font-family: 'Oswald', sans-serif;
 }
-.product .box-container .box a:hover{
+.product .box-container .box .btn-add-to-card:hover{
     background-color:chartreuse;
 }
 .product .show-all-prd{

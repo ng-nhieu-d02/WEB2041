@@ -1,6 +1,30 @@
   //get sessionStorage
 //sessionStorage.clear();
 
+fetch('http://localhost:3000/products')
+  .then(function(res) {
+    if(!res.ok) throw Error("loi: "+ res.statusText);
+      return res.json();
+  })
+  .then(function(data) {
+    str = "";
+    for (i in data) {
+      str += `
+          <div class="box">
+                <h4 style="display:none;">${data[i].price}</h4>
+                <a href="product/home/${data[i].id}"> <img src="${data[i].image}" alt=""> </a>
+                <h3>${data[i].name}</h3>
+                <p>${data[i].price}</p>
+                <a class="btn btn-add-to-card" name=${data[i].id}>add to your cart</a>
+            </div>
+      `;
+    }
+    document.querySelector('.box-product').innerHTML = str;
+  })
+  .catch(function(err){
+    console.log(err); 
+  })
+
 if(sessionStorage.getItem('yourcart')==null){
   var getcart = "0*";
 } else{
@@ -27,7 +51,7 @@ $(document).on('click', '.btn-add-to-card', function (e){
     var parent = $(this).parents('.box');
     var src = parent.find('img').attr('src');
     var name = parent.find('h3').text();
-    var prime = parent.find('p').text();
+    var prime = parent.find('h4').text();
     var getnameprd = parent.find('.btn-add-to-card').attr('name');
     if (document.getElementsByName(getnameprd).length > 1){
       let orderfail = document.querySelector('.order-fail');

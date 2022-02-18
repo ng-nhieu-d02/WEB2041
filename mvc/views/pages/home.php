@@ -42,18 +42,6 @@
     </div>
     <div class="box-container box-product">
 
-        <?php
-        while ($row = mysqli_fetch_assoc($data["product"])) {
-        ?>
-            <div class="box">
-                <img src="<?= $row['urlpicture'] ?>" alt="">
-                <h3><?= $row['name_sp'] ?></h3>
-                <p><?= number_format($row['price']) ?></p>
-                <a class="btn btn-add-to-card" name=<?= $row['id_sanpham'] ?>>add to your cart</a>
-            </div>
-        <?php
-        }
-        ?>
     </div>
 </section>
 <section class="review" id="review">

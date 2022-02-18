@@ -27,7 +27,7 @@
         </a>
         <nav class="navbar">
             <a href="index">Home</a>
-            <a href="product">Product</a>
+            <a href="#product">Product</a>
             <a href="#review">Review</a>
             <a href="#Certification">Certification</a>
             <a href="#blogs">Blogs</a>

@@ -7,6 +7,9 @@ class App{
     function __construct()
     {
         $arr = $this->UrlProcess();
+        if (empty($arr[0])) {
+            $arr[0] = $this -> controller;
+        }
 
         // xử lí controllers
         if( file_exists("./mvc/controllers/".$arr[0].".php") ){
